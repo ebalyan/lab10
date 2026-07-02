@@ -84,6 +84,34 @@ void HashTable::remove(string str) {
 	hash = hash % size;
 
 	//TODO
+	for(int i = 0; i < size; i++) {
+		if(data[hash] == nullptr) {
+			return;
+		}
+		if(*data[hash] == str) {
+			delete data[hash];
+			data[hash] = nullptr;
+
+			hash++;
+			hash = hash % size;
+
+			while(data[hash] != nullptr) {
+				string temp = *data[hash];
+
+				delete data[hash];
+				data[hash] = nullptr;
+
+				insert(temp);
+
+				hash++;
+				hash = hash % size;
+			}
+			return;
+		}
+
+		hash++;
+		hash = hash % size;
+	}
 }
 
 void HashTable::print() {
