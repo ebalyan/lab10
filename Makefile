@@ -1,5 +1,5 @@
 CC = g++
-CPPFLAGS = -g -Wall -std=c++11
+CPPFLAGS = -g -Wall -std=c++14
 TEST_DIR = tests
 BIN_DIR = bin
 GTEST_LL = -I /usr/include/gtest/ -l gtest -l gtest_main -pthread
