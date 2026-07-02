@@ -82,7 +82,7 @@ Remove should do nothing if the name does not exist in the hash table.
 void HashTable::remove(string str) {
 	unsigned hash = hash_str(str.c_str());
 	hash = hash % size;
-
+	
 	//TODO
 	for(int i = 0; i < size; i++) {
 		if(data[hash] == nullptr) {
